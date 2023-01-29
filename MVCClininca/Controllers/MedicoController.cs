@@ -93,7 +93,7 @@ namespace MVCClininca.Controllers
             {
                 context.Entry(medico).State = EntityState.Modified;
                 context.SaveChanges();
-                return RedirectToAction("Detail", medico);
+                return RedirectToAction("Detail", medico.Id);
 
             }
             else return View(medico);
