@@ -86,9 +86,8 @@ namespace MVCClininca.Controllers
         }
 
         [HttpPost]
-        public ActionResult Edit(int id, Medico medico) 
+        public ActionResult Edit(Medico medico) 
         {
-            if (id != medico.Id) return BadRequest();
             if (ModelState.IsValid)
             {
                 context.Entry(medico).State = EntityState.Modified;
@@ -98,7 +97,6 @@ namespace MVCClininca.Controllers
             }
             else return View(medico);
         }
-
 
 
     }
